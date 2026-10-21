@@ -1,0 +1,15 @@
+/* Colores, fuentes y valores de animación.
+   tema.js sobrescribe algunos con lo que pongas en config.js. */
+:root {
+  --obra-amarillo: #ffc21a;
+  --obra-negro: #17150f;
+  --obra-cable: #2b2a26;
+  --papel: #edf1f5;           /* fondo; la imagen se funde con él */
+  --plano: #c9d6e4;           /* líneas de la cuadrícula */
+
+  --font-letrero: "Saira Stencil One", "Arial Black", Impact, sans-serif;
+  --font-cinta: "Bungee", "Arial Black", Impact, sans-serif;
+
+  --vel-balanceo: 5s;
+  --giro: .8deg;
+}

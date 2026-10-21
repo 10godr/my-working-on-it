@@ -1,0 +1,26 @@
+/* Imagen central con su sombra */
+.obrero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+}
+
+.obrero img {
+  display: block;
+  height: clamp(170px, 38vh, 380px);
+  width: auto;
+  max-width: 86vw;
+  object-fit: contain;
+  mix-blend-mode: multiply;   /* el fondo blanco de la foto desaparece */
+  animation: teclear 1.6s ease-in-out infinite;
+}
+
+.obrero::after {
+  content: "";
+  width: 70%;
+  height: 16px;
+  margin-top: -10px;
+  background: radial-gradient(closest-side, rgb(23 21 15 / .18), transparent);
+  animation: sombra 1.6s ease-in-out infinite;
+}

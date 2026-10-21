@@ -1,0 +1,32 @@
+/* Círculo que gira con una palabra en el centro */
+.espera {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 104px;
+  height: 104px;
+}
+
+.espera svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: girar 2.4s linear infinite;
+}
+
+.espera circle { fill: none; stroke-width: 6; stroke-linecap: round; }
+.espera .pista { stroke: var(--plano); }
+.espera .arco  { stroke: var(--obra-negro); stroke-dasharray: 90 200; }
+.espera .arco2 { stroke: var(--obra-amarillo); stroke-dasharray: 40 250; stroke-dashoffset: -110; }
+
+#palabra {
+  padding-inline: 14px;
+  font-family: var(--font-cinta);
+  font-size: .78rem;
+  letter-spacing: .04em;
+  line-height: 1.1;
+  text-align: center;
+  transition: opacity .35s;
+}
+#palabra.oculta { opacity: 0; }

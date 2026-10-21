@@ -1,0 +1,81 @@
+/* Letrero amarillo colgado de dos cables */
+.grua {
+  position: relative;
+  z-index: 2;
+  width: min(90vw, 480px);
+  transform-origin: 50% 0;
+  animation:
+    bajar .9s cubic-bezier(.3, 1.3, .55, 1) both,
+    balanceo var(--vel-balanceo) ease-in-out .9s infinite;
+}
+
+/* Cables y gancho */
+.cables { position: relative; height: clamp(26px, 5vh, 50px); }
+.cables svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.cables line { stroke: var(--obra-cable); stroke-width: 2.5; vector-effect: non-scaling-stroke; }
+
+.gancho {
+  position: absolute;
+  left: 50%;
+  top: -9px;
+  width: 18px;
+  height: 18px;
+  margin-left: -9px;
+  border: 3px solid var(--obra-cable);
+  border-radius: 50%;
+}
+
+/* Placa */
+.letrero {
+  position: relative;
+  text-align: center;
+  background: var(--obra-amarillo);
+  border: 5px solid var(--obra-negro);
+  border-radius: 6px;
+  box-shadow: 0 14px 0 -6px rgb(0 0 0 / .12), 0 18px 30px rgb(0 0 0 / .18);
+}
+
+.franja {
+  height: 12px;
+  background: repeating-linear-gradient(-45deg, var(--obra-negro) 0 11px, var(--obra-amarillo) 11px 22px);
+}
+
+.letrero-cuerpo {
+  display: grid;
+  gap: 2px;
+  padding: clamp(8px, 1.8vh, 16px) 16px;
+}
+.letrero-cuerpo > * { min-width: 0; margin: 0; overflow-wrap: anywhere; }
+
+/* Textos */
+.nombre {
+  font-family: var(--font-letrero);
+  font-size: clamp(2.6rem, 13vw, 5.2rem);
+  font-weight: 400;
+  line-height: .92;
+  letter-spacing: .02em;
+}
+
+/* "10godr" lleva a GitHub sin parecer un link */
+.nombre a { color: inherit; text-decoration: none; cursor: inherit; }
+.nombre a:focus-visible { outline: 3px dashed var(--obra-negro); outline-offset: 4px; }
+
+.lema {
+  font-family: var(--font-cinta);
+  font-size: clamp(.95rem, 4vw, 1.45rem);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+/* Tornillos de las esquinas */
+.tornillo {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff8 0 20%, var(--obra-negro) 60%);
+}
+.tornillo.a { top: 20px; left: 8px; }
+.tornillo.b { top: 20px; right: 8px; }
+.tornillo.c { bottom: 20px; left: 8px; }
+.tornillo.d { bottom: 20px; right: 8px; }

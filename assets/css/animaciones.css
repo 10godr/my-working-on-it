@@ -1,0 +1,29 @@
+/* Todas las animaciones en un solo lugar */
+@keyframes bajar {
+  from { transform: translateY(-120%); }
+  to   { transform: none; }
+}
+
+@keyframes balanceo {
+  0%, 100% { transform: rotate(var(--giro)); }
+  50%      { transform: rotate(calc(var(--giro) * -1)); }
+}
+
+@keyframes teclear {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+@keyframes sombra {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: .75; }
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+/* Quien tenga activado "reducir movimiento" ve todo quieto */
+@media (prefers-reduced-motion: reduce) {
+  .grua, .obrero img, .obrero::after, .espera svg { animation: none; }
+}

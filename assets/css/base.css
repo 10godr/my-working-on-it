@@ -1,0 +1,29 @@
+/* Reset y escena: una columna centrada sobre papel de plano */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; margin: 0; }
+
+body {
+  background: var(--papel);
+  color: var(--obra-negro);
+  overflow: hidden;
+}
+
+.escena {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vh, 20px);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: clamp(12px, 4vh, 40px);
+  background:
+    radial-gradient(ellipse 34% 32% at 50% 58%, var(--papel) 60%, transparent 100%),
+    linear-gradient(var(--plano) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, var(--plano) 1px, transparent 1px) 0 0 / 32px 32px,
+    var(--papel);
+}
